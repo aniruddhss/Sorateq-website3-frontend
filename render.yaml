@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: sorateq-frontend
+    env: node
+    plan: free
+    region: ohio
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20.x
+      - key: FASTAPI_BACKEND_URL
+        sync: false
