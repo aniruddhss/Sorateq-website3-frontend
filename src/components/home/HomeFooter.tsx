@@ -27,8 +27,9 @@ const columns = [
     title: "Connect",
     links: [
       { label: "Contact", href: "/contact" },
-      { label: "Book a meeting", href: "/contact" },
-      { label: "hello@sorateq.com", href: "mailto:hello@sorateq.com" },
+      { label: "Book a meeting", href: "https://calendar.app.google/am18JEY6EjxrDyZd6" },
+      { label: "ani@sorateq.com", href: "mailto:ani@sorateq.com" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/sorateqstudio" },
     ],
   },
 ];
@@ -104,16 +105,22 @@ export function HomeFooter() {
                   {col.title}
                 </p>
                 <ul className="flex flex-col gap-3.5 text-sm">
-                  {col.links.map((link) => (
-                    <li key={link.label}>
-                      <Link
-                        href={link.href}
-                        className="text-[var(--foreground)]/80 underline-offset-4 transition-colors hover:text-[var(--accent-orange)] hover:underline"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
+                  {col.links.map((link) => {
+                    const isExternal = link.href.startsWith("http");
+                    return (
+                      <li key={link.label}>
+                        <Link
+                          href={link.href}
+                          target={isExternal ? "_blank" : undefined}
+                          rel={isExternal ? "noopener noreferrer" : undefined}
+                          className="text-[var(--foreground)]/80 underline-offset-4 transition-colors hover:text-[var(--accent-orange)] hover:underline inline-flex items-center gap-1"
+                        >
+                          {link.label}
+                          {isExternal && <ArrowUpRight className="h-3 w-3 opacity-60" />}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}

@@ -147,24 +147,31 @@ export default function Home() {
         <HeroScene />
 
         <div className="hero-inner relative z-10 mx-auto max-w-6xl text-center">
-          <p className={`hero-meta mb-10 ${eyebrow}`}>
+          <p className={`hero-meta mb-8 ${eyebrow}`}>
             <span className="pulse-dot mr-3 inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent-orange)] align-middle" />
-            AI product studio
+            AI Business Operating Systems
           </p>
 
           <h1
             ref={heroTitle}
-            className="text-[clamp(2.75rem,8vw,7.5rem)] font-medium leading-[0.95] tracking-[-0.06em]"
+            className="text-[clamp(2.5rem,6.5vw,5.75rem)] font-medium leading-[1.02] tracking-[-0.05em] text-[var(--foreground)]"
           >
-            We help turn messy
+            We Build AI-Powered
             <br />
-            <span className="font-serif italic text-[var(--muted-foreground)]">AI codebases</span> into
-            <br />
-            production code.
+            <span className="font-serif italic text-[var(--muted-foreground)]">Business Operating</span> Systems.
           </h1>
 
-          <p className="hero-meta mx-auto mt-10 max-w-xl text-base leading-7 text-[var(--muted-foreground)] md:text-lg">
-            We fix what AI cannot.
+          <h2 className="hero-meta mx-auto mt-8 max-w-3xl text-xl sm:text-2xl md:text-3xl font-normal leading-snug tracking-tight text-[var(--foreground)]/90">
+            Everything your business needs to attract, manage, operate, and grow —{" "}
+            <span className="font-serif italic text-[var(--muted-foreground)]">
+              connected in one intelligent ecosystem.
+            </span>
+          </h2>
+
+          <p className="hero-meta mx-auto mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-[var(--muted-foreground)] font-light">
+            We combine websites, customer acquisition, CRM, business operations, payments, AI-powered tools, and
+            intelligent automation into tailored business systems — helping companies streamline operations, capture
+            more opportunities, and scale smarter.
           </p>
         </div>
 
@@ -324,17 +331,20 @@ export default function Home() {
               </Link>
             </Magnetic>
             <Magnetic>
-              <Link
-                href="/meeting"
+              <a
+                href="https://calendar.app.google/am18JEY6EjxrDyZd6"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--border-hover)] bg-[var(--background)] px-8 py-4 text-sm font-medium transition-colors duration-300 hover:bg-[var(--accent)]"
               >
                 <CalendarDays className="h-4 w-4" />
-                Meet us
-              </Link>
+                Book a call
+                <ArrowUpRight className="h-3.5 w-3.5 opacity-60" />
+              </a>
             </Magnetic>
             <Magnetic>
               <a
-                href="mailto:hello@sorateq.com"
+                href="mailto:ani@sorateq.com"
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--border-hover)] bg-[var(--background)] px-8 py-4 text-sm font-medium transition-colors duration-300 hover:bg-[var(--accent)]"
               >
                 <Mail className="h-4 w-4" />

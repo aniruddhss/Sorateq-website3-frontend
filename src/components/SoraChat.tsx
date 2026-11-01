@@ -386,7 +386,7 @@ export function SoraChat({ conversationId, visitorEmail = "", initialMessages = 
                                 <span>Schedule a call</span>
                               </button>
                               <a
-                                href={`mailto:hello@sorateq.com?subject=${encodeURIComponent(
+                                href={`mailto:ani@sorateq.com?subject=${encodeURIComponent(
                                   block.projectBrief ? `Project inquiry: ${block.projectBrief.projectName}` : "Project inquiry"
                                 )}&body=${encodeURIComponent(
                                   `Hi Sorateq team,\n\nI'd like to discuss a project.\n\nContact email: ${visitorEmailState}`

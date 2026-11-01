@@ -170,11 +170,22 @@ export function MeetingSchedulerModal({
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="my-4 space-y-5">
-            <div>
-              <h3 className="text-lg font-semibold text-white">25-Minute Architecture Call</h3>
-              <p className="text-xs text-zinc-400 mt-0.5">
-                Direct discussion with a Sorateq founding engineer to review your MVP scope and architecture.
-              </p>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <h3 className="text-lg font-semibold text-white">25-Minute Architecture Call</h3>
+                <p className="text-xs text-zinc-400 mt-0.5">
+                  Direct discussion with a Sorateq founding engineer.
+                </p>
+              </div>
+              <a
+                href="https://calendar.app.google/am18JEY6EjxrDyZd6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 px-3 py-1.5 rounded-lg border border-emerald-500/40 bg-emerald-950/30 text-emerald-300 hover:text-white hover:bg-emerald-900/40 text-xs font-mono transition-all inline-flex items-center gap-1.5"
+              >
+                <span>Google Calendar</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
             </div>
 
             {error && (

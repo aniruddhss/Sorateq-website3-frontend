@@ -4,7 +4,25 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { MeetingSchedulerModal } from "@/components/MeetingSchedulerModal";
-import { Sparkles, ArrowRight, Mail, Calendar, MapPin, Clock, CheckCircle2 } from "lucide-react";
+import { Sparkles, ArrowRight, Mail, Calendar, MapPin, Clock, CheckCircle2, ArrowUpRight } from "lucide-react";
+
+function LinkedinIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect x="2" y="9" width="4" height="12" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+}
 
 export default function ContactPage() {
   const [isMeetingOpen, setIsMeetingOpen] = useState(false);
@@ -56,13 +74,23 @@ export default function ContactPage() {
             </ul>
           </div>
 
-          <button
-            onClick={() => setIsMeetingOpen(true)}
-            className="w-full flex items-center justify-center space-x-2 rounded-xl bg-white px-5 py-3 text-xs font-medium text-zinc-950 hover:bg-zinc-200 transition-all shadow-md"
-          >
-            <span>Pick a Time Slot</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href="https://calendar.app.google/am18JEY6EjxrDyZd6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center space-x-2 rounded-xl bg-white px-5 py-3 text-xs font-medium text-zinc-950 hover:bg-zinc-200 transition-all shadow-md"
+            >
+              <span>Book on Google Calendar</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+            <button
+              onClick={() => setIsMeetingOpen(true)}
+              className="flex items-center justify-center space-x-1.5 rounded-xl border border-white/10 bg-zinc-800/80 px-4 py-3 text-xs font-medium text-zinc-200 hover:text-white hover:bg-zinc-800 transition-all"
+            >
+              <span>Quick Slot</span>
+            </button>
+          </div>
         </div>
 
         {/* Option 2: Start with Sora */}
@@ -111,14 +139,46 @@ export default function ContactPage() {
       </div>
 
       {/* Direct Contact Meta */}
-      <div className="rounded-2xl border border-white/10 bg-zinc-900/30 p-8 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs font-mono">
+      <div className="rounded-2xl border border-white/10 bg-zinc-900/30 p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs font-mono">
         <div className="space-y-1">
           <div className="flex items-center text-zinc-500 uppercase tracking-wider text-[10px]">
             <Mail className="w-3.5 h-3.5 mr-1.5 text-emerald-400" />
             <span>Direct Email</span>
           </div>
-          <a href="mailto:hello@sorateq.com" className="text-zinc-200 hover:text-white block text-sm">
-            hello@sorateq.com
+          <a href="mailto:ani@sorateq.com" className="text-zinc-200 hover:text-white block text-sm">
+            ani@sorateq.com
+          </a>
+        </div>
+
+        <div className="space-y-1">
+          <div className="flex items-center text-zinc-500 uppercase tracking-wider text-[10px]">
+            <Calendar className="w-3.5 h-3.5 mr-1.5 text-emerald-400" />
+            <span>Google Calendar</span>
+          </div>
+          <a
+            href="https://calendar.app.google/am18JEY6EjxrDyZd6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-200 hover:text-white inline-flex items-center gap-1 text-sm"
+          >
+            Schedule 25m Call
+            <ArrowUpRight className="w-3 h-3 text-zinc-400" />
+          </a>
+        </div>
+
+        <div className="space-y-1">
+          <div className="flex items-center text-zinc-500 uppercase tracking-wider text-[10px]">
+            <LinkedinIcon className="w-3.5 h-3.5 mr-1.5 text-emerald-400" />
+            <span>LinkedIn</span>
+          </div>
+          <a
+            href="https://www.linkedin.com/company/sorateqstudio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-200 hover:text-white inline-flex items-center gap-1 text-sm"
+          >
+            sorateqstudio
+            <ArrowUpRight className="w-3 h-3 text-zinc-400" />
           </a>
         </div>
 
@@ -128,14 +188,6 @@ export default function ContactPage() {
             <span>Operating Hours</span>
           </div>
           <div className="text-zinc-200 text-sm">Mon – Fri / 24h Global Async</div>
-        </div>
-
-        <div className="space-y-1">
-          <div className="flex items-center text-zinc-500 uppercase tracking-wider text-[10px]">
-            <MapPin className="w-3.5 h-3.5 mr-1.5 text-emerald-400" />
-            <span>Studio Location</span>
-          </div>
-          <div className="text-zinc-200 text-sm">San Francisco / Remote First</div>
         </div>
       </div>
 
