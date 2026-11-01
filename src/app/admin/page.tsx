@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Users,
   MessageSquare,
@@ -103,9 +104,20 @@ export default function AdminDashboardPage() {
     return (
       <div className="flex-1 flex items-center justify-center p-6 min-h-[60vh]">
         <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-zinc-900/80 p-8 space-y-6 shadow-2xl">
-          <div className="flex items-center space-x-2 text-zinc-400 text-xs font-mono">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2.5">
+              <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-xl overflow-hidden border border-white/15 bg-zinc-950 p-1">
+                <Image
+                  src="/sorateq-logo-medium.png"
+                  alt="Sorateq"
+                  width={32}
+                  height={32}
+                  className="h-full w-full object-contain"
+                />
+              </span>
+              <span className="font-mono text-xs uppercase tracking-widest text-zinc-400">SORATEQ OS</span>
+            </div>
             <Lock className="w-4 h-4 text-emerald-400" />
-            <span>SORATEQ INTERNAL CONSOLE</span>
           </div>
 
           <div>
@@ -158,13 +170,22 @@ export default function AdminDashboardPage() {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
         <div>
-          <div className="flex items-center space-x-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-subtle" />
+          <div className="flex items-center space-x-2.5">
+            <span className="relative flex h-6 w-6 shrink-0 items-center justify-center rounded-lg overflow-hidden border border-white/15 bg-zinc-950 p-0.5">
+              <Image
+                src="/sorateq-logo-medium.png"
+                alt="Sorateq"
+                width={24}
+                height={24}
+                className="h-full w-full object-contain"
+              />
+            </span>
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-subtle" />
             <span className="font-mono text-xs uppercase tracking-widest text-zinc-400">
               SORATEQ OPERATING SYSTEM
             </span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-1">Admin Dashboard</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-2">Admin Dashboard</h1>
         </div>
 
         <div className="flex items-center space-x-3">

@@ -29,12 +29,30 @@ export const metadata: Metadata = {
     "lean software development",
   ],
   authors: [{ name: "Sorateq Studio" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "256x256" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "256x256", type: "image/png" },
+    ],
+  },
   openGraph: {
     title: "Sorateq | AI-Native Product Studio",
     description: "Ideas in. Products out. We design, engineer, and launch digital products through fast, lean iterations.",
     url: "https://sorateq.com",
     siteName: "Sorateq",
     type: "website",
+    images: [
+      {
+        url: "/sorateq-logo-high.png",
+        width: 1312,
+        height: 1199,
+        alt: "Sorateq Logo",
+      },
+    ],
   },
   robots: {
     index: true,

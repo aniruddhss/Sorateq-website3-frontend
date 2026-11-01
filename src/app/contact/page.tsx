@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { MeetingSchedulerModal } from "@/components/MeetingSchedulerModal";
 import { Sparkles, ArrowRight, Mail, Calendar, MapPin, Clock, CheckCircle2 } from "lucide-react";
 
@@ -67,8 +68,14 @@ export default function ContactPage() {
         {/* Option 2: Start with Sora */}
         <div className="rounded-2xl border border-emerald-500/30 bg-emerald-950/10 p-8 space-y-6 flex flex-col justify-between">
           <div className="space-y-4">
-            <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white">
-              <Sparkles className="w-5 h-5 text-emerald-400" />
+            <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 p-1.5 flex items-center justify-center overflow-hidden">
+              <Image
+                src="/sorateq-logo-medium.png"
+                alt="Sora"
+                width={28}
+                height={28}
+                className="h-full w-full object-contain"
+              />
             </div>
             <div>
               <div className="text-[11px] font-mono text-emerald-400 uppercase tracking-wider">Fastest Path</div>

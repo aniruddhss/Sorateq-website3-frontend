@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   ArrowUpRight,
@@ -51,18 +52,29 @@ export function Navigation() {
         isOpen ? "w-72" : "w-16"
       }`}
     >
-      <div className="flex h-20 shrink-0 items-center overflow-hidden pl-[18px] pr-5">
-        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[var(--border-hover)] font-serif text-sm italic">
-          S
+      <Link
+        href="/"
+        className="group flex h-20 shrink-0 items-center overflow-hidden pl-[15px] pr-5 focus:outline-none"
+        title="Sorateq Home"
+      >
+        <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-xl overflow-hidden border border-[var(--border-hover)] bg-[var(--card)] p-1 shadow-sm transition-transform duration-300 group-hover:scale-105">
+          <Image
+            src="/sorateq-logo-medium.png"
+            alt="Sorateq"
+            width={32}
+            height={32}
+            className="h-full w-full object-contain"
+            priority
+          />
         </span>
         <span
-          className={`ml-4 whitespace-nowrap font-serif text-lg italic tracking-tight transition-all duration-500 ${
+          className={`ml-3.5 whitespace-nowrap font-serif text-lg italic tracking-tight text-[var(--foreground)] transition-all duration-500 ${
             isOpen ? "translate-x-0 opacity-100" : "-translate-x-2 opacity-0"
           }`}
         >
           Sorateq
         </span>
-      </div>
+      </Link>
 
       <nav className="flex flex-col gap-1 px-3 pt-6">
         {PRIMARY_ITEMS.map((item, i) => {

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ArrowUpRight, CalendarDays, Mail, Sparkles } from "lucide-react";
 import { ProjectRecord } from "@/lib/types";
 import { gsap, ScrollTrigger, SplitText, useGSAP } from "@/lib/gsap";
@@ -295,6 +296,15 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-5xl text-center">
+          <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--border-hover)] bg-[var(--card)] p-2 shadow-sm transition-transform duration-300 hover:scale-105" data-reveal>
+            <Image
+              src="/sorateq-logo-medium.png"
+              alt="Sorateq"
+              width={56}
+              height={56}
+              className="h-full w-full object-contain"
+            />
+          </div>
           <p className={eyebrow} data-reveal>Start with clarity</p>
           <h2
             ref={ctaTitle}

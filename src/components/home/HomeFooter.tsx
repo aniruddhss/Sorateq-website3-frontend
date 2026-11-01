@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Magnetic } from "./Magnetic";
 
@@ -62,6 +63,20 @@ export function HomeFooter() {
       <div className="mx-auto w-full max-w-6xl">
         <div className="grid gap-16 lg:grid-cols-[1.2fr_1fr] lg:gap-24">
           <div>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-xl overflow-hidden border border-[var(--border-hover)] bg-[var(--card)] p-1.5 shadow-sm">
+                <Image
+                  src="/sorateq-logo-medium.png"
+                  alt="Sorateq Studio"
+                  width={36}
+                  height={36}
+                  className="h-full w-full object-contain"
+                />
+              </span>
+              <span className="font-serif text-lg italic tracking-tight text-[var(--foreground)]">
+                Sorateq
+              </span>
+            </div>
             <p className="text-[11px] font-medium uppercase tracking-[0.35em] text-[var(--muted-foreground)]">
               Ideas in. Products out.
             </p>
@@ -128,7 +143,18 @@ export function HomeFooter() {
             <span>Accepting new projects</span>
             {localTime && <span className="font-mono normal-case tracking-normal">· {localTime}</span>}
           </div>
-          <span>© {new Date().getFullYear()} Sorateq Studio. All rights reserved.</span>
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-5 w-5 shrink-0 items-center justify-center rounded-md overflow-hidden border border-[var(--border)] bg-[var(--card)] p-0.5">
+              <Image
+                src="/sorateq-logo-medium.png"
+                alt="Sorateq"
+                width={20}
+                height={20}
+                className="h-full w-full object-contain"
+              />
+            </span>
+            <span>© {new Date().getFullYear()} Sorateq Studio. All rights reserved.</span>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { ChatMessage, ProjectBriefData } from "@/lib/types";
 import { ProjectCard } from "./ProjectCard";
 import { ProjectBriefModal } from "./ProjectBriefModal";
@@ -288,6 +289,17 @@ export function SoraChat({ conversationId, visitorEmail = "", initialMessages = 
             >
               {/* Message Header */}
               <div className="flex items-center space-x-2 mb-1.5 px-1">
+                {isAssistant && (
+                  <span className="relative flex h-4 w-4 shrink-0 items-center justify-center rounded-full overflow-hidden border border-[var(--border)] bg-[var(--card)] p-0.5">
+                    <Image
+                      src="/sorateq-logo-medium.png"
+                      alt="Sora"
+                      width={16}
+                      height={16}
+                      className="h-full w-full object-contain"
+                    />
+                  </span>
+                )}
                 <span className="text-[11px] font-medium uppercase tracking-wider text-[var(--muted-foreground)]">
                   {isAssistant ? "Sora" : visitorEmailState || "You"}
                 </span>
@@ -442,7 +454,17 @@ export function SoraChat({ conversationId, visitorEmail = "", initialMessages = 
       <div className={`w-full max-w-3xl mx-auto flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${messages.length === 0 ? 'pb-[10vh]' : 'pb-6'}`}>
         
         {messages.length === 0 && (
-          <div className="text-center mb-10 animate-fade-in">
+          <div className="text-center mb-10 animate-fade-in flex flex-col items-center">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--border-hover)] bg-[var(--card)] p-2 shadow-sm transition-transform duration-300 hover:scale-105">
+              <Image
+                src="/sorateq-logo-medium.png"
+                alt="Sorateq AI Assistant"
+                width={56}
+                height={56}
+                className="h-full w-full object-contain"
+                priority
+              />
+            </div>
             <h1 className="text-3xl sm:text-5xl font-serif text-[var(--foreground)] tracking-tight mb-3">
               What services are you looking for?
             </h1>

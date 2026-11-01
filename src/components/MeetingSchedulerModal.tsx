@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { ProjectBriefData } from "@/lib/types";
 import { X, Calendar, Clock, CheckCircle2, Loader2, ArrowRight } from "lucide-react";
 
@@ -120,8 +121,16 @@ export function MeetingSchedulerModal({
       <div className="relative w-full max-w-xl bg-zinc-950 border border-white/15 rounded-2xl p-6 sm:p-8 flex flex-col shadow-2xl overflow-hidden">
         {/* Header */}
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
-          <div className="flex items-center space-x-2">
-            <Calendar className="w-4 h-4 text-emerald-400" />
+          <div className="flex items-center space-x-2.5">
+            <span className="relative flex h-6 w-6 shrink-0 items-center justify-center rounded-lg overflow-hidden border border-white/15 bg-zinc-900 p-0.5">
+              <Image
+                src="/sorateq-logo-medium.png"
+                alt="Sorateq"
+                width={24}
+                height={24}
+                className="h-full w-full object-contain"
+              />
+            </span>
             <span className="font-mono text-xs uppercase tracking-widest text-zinc-400">
               SORATEQ TECHNICAL DISCOVERY
             </span>

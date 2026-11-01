@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 
 interface ComingSoonProps {
@@ -14,6 +15,16 @@ export function ComingSoon({ eyebrow, title, description }: ComingSoonProps) {
       <div className="grid-bg pointer-events-none absolute inset-0" />
 
       <div className="relative z-10 mx-auto max-w-3xl">
+        <div className="mx-auto mb-8 flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--border-hover)] bg-[var(--card)] p-2.5 shadow-sm transition-transform duration-300 hover:scale-105">
+          <Image
+            src="/sorateq-logo-medium.png"
+            alt="Sorateq"
+            width={56}
+            height={56}
+            className="h-full w-full object-contain"
+          />
+        </div>
+
         <p className="inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.35em] text-[var(--muted-foreground)]">
           <span className="relative flex h-2 w-2">
             <span className="pulse-dot absolute inline-flex h-full w-full rounded-full bg-[var(--accent-orange)] opacity-60" />
