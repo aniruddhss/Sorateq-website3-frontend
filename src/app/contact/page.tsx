@@ -94,9 +94,9 @@ export default function ContactPage() {
         </div>
 
         {/* Option 2: Start with Sora */}
-        <div className="rounded-2xl border border-emerald-500/30 bg-emerald-950/10 p-8 space-y-6 flex flex-col justify-between">
+        <div className="rounded-2xl border border-[var(--accent-orange)]/30 bg-[var(--accent-orange)]/[0.03] p-8 space-y-6 flex flex-col justify-between hover:border-[var(--accent-orange)]/50 transition-colors">
           <div className="space-y-4">
-            <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 p-1.5 flex items-center justify-center overflow-hidden">
+            <div className="w-10 h-10 rounded-lg bg-white/5 border border-[var(--accent-orange)]/30 p-1.5 flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(255,90,31,0.15)]">
               <Image
                 src="/sorateq-logo-medium.png"
                 alt="Sora"
@@ -106,7 +106,7 @@ export default function ContactPage() {
               />
             </div>
             <div>
-              <div className="text-[11px] font-mono text-emerald-400 uppercase tracking-wider">Fastest Path</div>
+              <div className="text-[11px] font-mono text-[var(--accent-orange)] uppercase tracking-wider font-semibold">Fastest Path</div>
               <h3 className="text-2xl font-semibold text-white mt-0.5">Start with Sora</h3>
               <p className="text-xs text-zinc-300 mt-1 leading-relaxed">
                 Talk through your idea now. Sora will assemble your project brief before our team conversation.
@@ -114,15 +114,15 @@ export default function ContactPage() {
             </div>
             <ul className="space-y-2 text-xs text-zinc-300 font-mono">
               <li className="flex items-center">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-orange)] mr-2 shadow-[0_0_6px_rgba(255,90,31,0.8)]" />
                 <span>Instant interactive feedback</span>
               </li>
               <li className="flex items-center">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-orange)] mr-2 shadow-[0_0_6px_rgba(255,90,31,0.8)]" />
                 <span>Automatic structured PRD brief</span>
               </li>
               <li className="flex items-center">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-orange)] mr-2 shadow-[0_0_6px_rgba(255,90,31,0.8)]" />
                 <span>No signup required</span>
               </li>
             </ul>
@@ -130,7 +130,7 @@ export default function ContactPage() {
 
           <Link
             href="/sora"
-            className="w-full flex items-center justify-center space-x-2 rounded-xl bg-emerald-500 text-zinc-950 px-5 py-3 text-xs font-medium hover:bg-emerald-400 transition-all shadow-lg font-sans"
+            className="w-full flex items-center justify-center space-x-2 rounded-xl bg-[var(--accent-orange)] text-white px-5 py-3 text-xs font-medium hover:bg-[#e04f1a] transition-all shadow-[0_4px_20px_rgba(255,90,31,0.25)] font-sans"
           >
             <span>Launch Sora Workspace</span>
             <ArrowRight className="w-4 h-4" />

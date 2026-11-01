@@ -90,7 +90,7 @@ export function HomeFooter() {
             <Magnetic>
               <Link
                 href="/contact"
-                className="group mt-10 inline-flex items-center gap-3 rounded-full border border-[var(--border-hover)] px-6 py-3 text-sm font-medium transition-colors duration-300 hover:border-[var(--accent-orange)] hover:text-[var(--accent-orange)]"
+                className="group mt-10 inline-flex items-center gap-3 rounded-full border border-[var(--border-hover)] px-6 py-3 text-sm font-medium transition-all duration-300 hover:border-[var(--accent-orange)] hover:text-[var(--accent-orange)] hover:shadow-[0_0_20px_rgba(255,90,31,0.18)]"
               >
                 Start a project
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -132,8 +132,8 @@ export function HomeFooter() {
             {WORD.split("").map((letter, i) => (
               <span
                 key={`${letter}-${i}`}
-                className="inline-block text-[var(--border-hover)] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-2 group-hover:text-[var(--foreground)]"
-                style={{ transitionDelay: `${i * 45}ms` }}
+                className="inline-block text-[var(--border-hover)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-2 group-hover:text-[var(--foreground)] hover:!text-[var(--accent-orange)] hover:!scale-105"
+                style={{ transitionDelay: `${i * 35}ms` }}
               >
                 {letter}
               </span>

@@ -75,7 +75,7 @@ export function Navigation() {
         className="group flex h-20 shrink-0 items-center overflow-hidden pl-[15px] pr-5 focus:outline-none"
         title="Sorateq Home"
       >
-        <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-xl overflow-hidden border border-[var(--border-hover)] bg-[var(--card)] p-1 shadow-sm transition-transform duration-300 group-hover:scale-105">
+        <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-xl overflow-hidden border border-[var(--border-hover)] bg-[var(--card)] p-1 shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:border-[var(--accent-orange)]/60 group-hover:shadow-[0_0_14px_rgba(255,90,31,0.25)]">
           <Image
             src="/sorateq-logo-medium.png"
             alt="Sorateq"
@@ -106,25 +106,25 @@ export function Navigation() {
               className="group relative flex h-12 items-center overflow-hidden rounded-xl pl-3 pr-3 transition-colors duration-300 hover:bg-[var(--accent)]"
             >
               {isActive && (
-                <span className="absolute left-0 top-1/2 h-6 w-[2px] -translate-y-1/2 rounded-full bg-[var(--accent-orange)]" />
+                <span className="absolute left-0 top-1/2 h-6 w-[2.5px] -translate-y-1/2 rounded-full bg-[var(--accent-orange)] shadow-[0_0_8px_rgba(255,90,31,0.6)]" />
               )}
               <Icon
                 className={`h-[18px] w-[18px] shrink-0 transition-colors duration-300 ${
-                  isActive ? "text-[var(--foreground)]" : "text-[var(--muted-foreground)] group-hover:text-[var(--foreground)]"
+                  isActive ? "text-[var(--accent-orange)]" : "text-[var(--muted-foreground)] group-hover:text-[var(--accent-orange)]"
                 }`}
                 strokeWidth={1.5}
               />
               <span className="ml-4 flex flex-1 items-center justify-between overflow-hidden">
                 <span
                   className={`whitespace-nowrap text-[14px] transition-all duration-500 ${
-                    isActive ? "text-[var(--foreground)]" : "text-[var(--muted-foreground)] group-hover:text-[var(--foreground)]"
+                    isActive ? "text-[var(--foreground)] font-medium" : "text-[var(--muted-foreground)] group-hover:text-[var(--foreground)]"
                   } ${isOpen ? "translate-x-0 opacity-100" : "-translate-x-3 opacity-0"}`}
                 >
                   {item.name}
                 </span>
                 <span
-                  className={`font-mono text-[10px] tracking-widest text-[var(--muted-foreground)]/60 transition-opacity duration-500 ${
-                    isOpen ? "opacity-100" : "opacity-0"
+                  className={`font-mono text-[10px] tracking-widest transition-opacity duration-500 ${
+                    isActive ? "text-[var(--accent-orange)] opacity-100" : "text-[var(--muted-foreground)]/60 opacity-0 group-hover:opacity-100"
                   }`}
                 >
                   {String(i + 1).padStart(2, "0")}

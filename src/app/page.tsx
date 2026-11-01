@@ -78,7 +78,9 @@ export default function Home() {
           ease: "power3.out",
           scrollTrigger: { trigger: el, start: "top 85%", once: true },
           onUpdate: () => {
-            el.textContent = `${prefix}${Math.round(obj.v)}${suffix}`;
+            el.innerHTML = `${prefix}${Math.round(obj.v)}${
+              suffix ? `<span class="text-[var(--accent-orange)]">${suffix}</span>` : ""
+            }`;
           },
         });
       });
@@ -188,13 +190,18 @@ export default function Home() {
           <p className={eyebrow} data-reveal>By the numbers</p>
           <div className="mt-16 grid grid-cols-1 gap-x-12 gap-y-20 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
-              <div key={stat.label} data-reveal className="border-t border-[var(--border-hover)] pt-8">
+              <div
+                key={stat.label}
+                data-reveal
+                className="group relative border-t border-[var(--border-hover)] pt-8 transition-colors duration-500 hover:border-[var(--accent-orange)]"
+              >
+                <div className="absolute -top-[1px] left-0 h-[2px] w-0 bg-[var(--accent-orange)] transition-all duration-500 group-hover:w-full" />
                 <div className="text-[clamp(3rem,6vw,5.5rem)] font-medium leading-none tracking-[-0.06em]">
                   <span data-count={stat.to} data-prefix={stat.prefix} data-suffix={stat.suffix}>
-                    {stat.prefix}0{stat.suffix}
+                    {stat.prefix}0{stat.suffix ? <span className="text-[var(--accent-orange)]">{stat.suffix}</span> : null}
                   </span>
                 </div>
-                <div className="mt-6 text-[11px] uppercase tracking-[0.25em] text-[var(--muted-foreground)]">
+                <div className="mt-6 text-[11px] uppercase tracking-[0.25em] text-[var(--muted-foreground)] transition-colors duration-300 group-hover:text-[var(--foreground)]">
                   {stat.label}
                 </div>
               </div>
@@ -236,10 +243,10 @@ export default function Home() {
               >
                 <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.3em] text-[var(--muted-foreground)]">
                   <span>
-                    Case {String(i + 1).padStart(2, "0")} · {project.industry}
+                    Case <span className="text-[var(--accent-orange)] font-mono">{String(i + 1).padStart(2, "0")}</span> · {project.industry}
                   </span>
                   {project.metrics?.[0] && (
-                    <span className="rounded-full border border-[var(--accent-orange)]/40 px-3 py-1 text-[var(--accent-orange)]">
+                    <span className="rounded-full border border-[var(--accent-orange)]/50 bg-[var(--accent-orange)]/10 px-3.5 py-1 text-[var(--accent-orange)] font-medium shadow-[0_0_15px_rgba(255,90,31,0.12)]">
                       {project.metrics[0].value} {project.metrics[0].label}
                     </span>
                   )}
@@ -269,7 +276,10 @@ export default function Home() {
                 <div className="flex flex-wrap items-end justify-between gap-6">
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.slice(0, 5).map((tech) => (
-                      <span key={tech} className="rounded-full border border-[var(--border)] px-3 py-1 text-xs text-[var(--muted-foreground)]">
+                      <span
+                        key={tech}
+                        className="rounded-full border border-[var(--border)] px-3 py-1 text-xs text-[var(--muted-foreground)] transition-colors duration-200 hover:border-[var(--accent-orange)]/60 hover:bg-[var(--accent-orange)]/5 hover:text-[var(--accent-orange)]"
+                      >
                         {tech}
                       </span>
                     ))}
@@ -295,14 +305,16 @@ export default function Home() {
       {/* CTA */}
       <section className="cta-section relative flex min-h-screen items-center justify-center overflow-hidden px-6 py-32 md:px-16">
         <div className="grid-bg pointer-events-none absolute inset-0" />
+        <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[550px] w-[550px] rounded-full bg-[var(--accent-orange)]/[0.04] blur-3xl" />
         <div className="cta-rings pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="ring-a absolute left-1/2 top-1/2 h-[720px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[var(--border-hover)]" />
           <div className="ring-b absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--border)]" />
-          <div className="absolute left-1/2 top-[calc(50%-360px)] h-2 w-2 -translate-x-1/2 rounded-full bg-[var(--accent-orange)]" />
+          <div className="absolute left-1/2 top-[calc(50%-360px)] h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[var(--accent-orange)] shadow-[0_0_12px_rgba(255,90,31,0.9)] animate-pulse-subtle" />
+          <div className="absolute left-1/2 top-[calc(50%+240px)] h-2 w-2 -translate-x-1/2 rounded-full bg-[var(--accent-orange)]/80 shadow-[0_0_10px_rgba(255,90,31,0.6)]" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-5xl text-center">
-          <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--border-hover)] bg-[var(--card)] p-2 shadow-sm transition-transform duration-300 hover:scale-105" data-reveal>
+          <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--accent-orange)]/30 bg-[var(--card)] p-2 shadow-sm shadow-[0_0_24px_rgba(255,90,31,0.12)] transition-transform duration-300 hover:scale-105 hover:border-[var(--accent-orange)]/60" data-reveal>
             <Image
               src="/sorateq-logo-medium.png"
               alt="Sorateq"
@@ -311,7 +323,10 @@ export default function Home() {
               className="h-full w-full object-contain"
             />
           </div>
-          <p className={eyebrow} data-reveal>Start with clarity</p>
+          <p className={eyebrow} data-reveal>
+            <span className="text-[var(--accent-orange)] font-bold mr-1.5">/</span>
+            Start with clarity
+          </p>
           <h2
             ref={ctaTitle}
             className="mt-8 text-[clamp(2.75rem,7vw,6rem)] font-medium leading-[0.98] tracking-[-0.06em]"
@@ -322,8 +337,8 @@ export default function Home() {
           <div className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row" data-reveal>
             <Magnetic>
               <Link
-                href="/contact"
-                className="btn-sweep inline-flex items-center gap-2 rounded-full bg-[var(--foreground)] px-8 py-4 text-sm font-medium text-[var(--background)]"
+                href="/sora"
+                className="btn-sweep inline-flex items-center gap-2 rounded-full bg-[var(--accent-orange)] px-8 py-4 text-sm font-medium text-white shadow-[0_4px_24px_rgba(255,90,31,0.28)] transition-all hover:bg-[#e04f1a] hover:shadow-[0_6px_32px_rgba(255,90,31,0.4)]"
               >
                 <Sparkles className="h-4 w-4" />
                 Talk to Sora
@@ -334,7 +349,7 @@ export default function Home() {
                 href="https://calendar.app.google/am18JEY6EjxrDyZd6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-[var(--border-hover)] bg-[var(--background)] px-8 py-4 text-sm font-medium transition-colors duration-300 hover:bg-[var(--accent)]"
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--border-hover)] bg-[var(--background)] px-8 py-4 text-sm font-medium transition-colors duration-300 hover:border-[var(--accent-orange)] hover:text-[var(--accent-orange)] hover:bg-[var(--accent)]"
               >
                 <CalendarDays className="h-4 w-4" />
                 Book a call
@@ -344,7 +359,7 @@ export default function Home() {
             <Magnetic>
               <a
                 href="mailto:ani@sorateq.com"
-                className="inline-flex items-center gap-2 rounded-full border border-[var(--border-hover)] bg-[var(--background)] px-8 py-4 text-sm font-medium transition-colors duration-300 hover:bg-[var(--accent)]"
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--border-hover)] bg-[var(--background)] px-8 py-4 text-sm font-medium transition-colors duration-300 hover:border-[var(--accent-orange)] hover:text-[var(--accent-orange)] hover:bg-[var(--accent)]"
               >
                 <Mail className="h-4 w-4" />
                 Email us

@@ -455,7 +455,7 @@ export function SoraChat({ conversationId, visitorEmail = "", initialMessages = 
         
         {messages.length === 0 && (
           <div className="text-center mb-10 animate-fade-in flex flex-col items-center">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--border-hover)] bg-[var(--card)] p-2 shadow-sm transition-transform duration-300 hover:scale-105">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--accent-orange)]/40 bg-[var(--card)] p-2 shadow-sm shadow-[0_0_24px_rgba(255,90,31,0.15)] transition-transform duration-300 hover:scale-105 hover:border-[var(--accent-orange)]">
               <Image
                 src="/sorateq-logo-medium.png"
                 alt="Sorateq AI Assistant"
@@ -481,7 +481,7 @@ export function SoraChat({ conversationId, visitorEmail = "", initialMessages = 
                 e.preventDefault();
                 handleSendMessage();
               }}
-              className="relative flex items-center w-full rounded-full border border-[var(--border)] bg-[var(--card)] px-4 py-3 shadow-lg focus-within:ring-2 focus-within:ring-[var(--border-hover)] focus-within:border-[var(--border-hover)] transition-all"
+              className="relative flex items-center w-full rounded-full border border-[var(--border)] bg-[var(--card)] px-4 py-3 shadow-lg focus-within:ring-2 focus-within:ring-[var(--accent-orange)]/30 focus-within:border-[var(--accent-orange)]/60 transition-all"
             >
               <button 
                 type="button" 
@@ -509,7 +509,7 @@ export function SoraChat({ conversationId, visitorEmail = "", initialMessages = 
                   aria-label="Send message"
                   className={`flex h-10 w-10 items-center justify-center rounded-full transition-all ${
                     inputValue.trim() && !loading
-                      ? 'bg-[var(--foreground)] text-[var(--background)] hover:opacity-90 shadow-md'
+                      ? 'bg-[var(--accent-orange)] text-white hover:bg-[#e04f1a] shadow-md shadow-[0_2px_12px_rgba(255,90,31,0.3)]'
                       : 'bg-[var(--foreground)] text-[var(--background)] opacity-20 cursor-not-allowed'
                   }`}
                 >
@@ -531,7 +531,7 @@ export function SoraChat({ conversationId, visitorEmail = "", initialMessages = 
                   key={suggestion}
                   onClick={() => handleSendMessage(suggestion)}
                   disabled={loading}
-                  className="px-3 py-1.5 text-xs font-medium rounded-full border border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:border-[var(--border-hover)] transition-colors"
+                  className="px-3 py-1.5 text-xs font-medium rounded-full border border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:text-[var(--accent-orange)] hover:border-[var(--accent-orange)]/50 hover:bg-[var(--accent-orange)]/5 transition-all"
                 >
                   {suggestion}
                 </button>

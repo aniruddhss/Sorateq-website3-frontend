@@ -50,11 +50,21 @@ export function ServiceIndex() {
                 className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${
                   isActive ? "opacity-100" : "opacity-0"
                 }`}
-                style={{ background: "radial-gradient(circle at 30% 0%, var(--border-hover), transparent 70%)" }}
+                style={{ background: "radial-gradient(circle at 30% 0%, rgba(255, 90, 31, 0.12), transparent 75%)" }}
+              />
+
+              <div
+                className={`absolute top-0 left-0 right-0 h-[2px] bg-[var(--accent-orange)] transition-all duration-300 origin-left ${
+                  isActive ? "opacity-100 scale-x-100" : "opacity-0 scale-x-50 group-hover:opacity-40"
+                }`}
               />
 
               <div className="relative flex items-center justify-between">
-                <span className="font-mono text-xs tracking-[0.3em] text-[var(--muted-foreground)]">
+                <span
+                  className={`font-mono text-xs tracking-[0.3em] transition-colors duration-300 ${
+                    isActive ? "text-[var(--accent-orange)] font-semibold" : "text-[var(--muted-foreground)]"
+                  }`}
+                >
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <ArrowUpRight
