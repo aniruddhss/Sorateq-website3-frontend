@@ -148,7 +148,6 @@ export default function Home() {
 
         <div className="hero-inner relative z-10 mx-auto max-w-6xl text-center">
           <p className={`hero-meta mb-8 ${eyebrow}`}>
-            <span className="pulse-dot mr-3 inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent-orange)] align-middle" />
             AI Business Operating Systems
           </p>
 
