@@ -26,7 +26,7 @@ export function HeroScene() {
     const group = new THREE.Group();
     scene.add(group);
 
-    // Geodesic wireframe sphere in vivid orange
+    // Pure, crisp geodesic wireframe sphere in vivid orange
     const icoGeo = new THREE.IcosahedronGeometry(2.1, 2);
     const wireGeo = new THREE.WireframeGeometry(icoGeo);
     const wireMat = new THREE.LineBasicMaterial({
@@ -36,7 +36,7 @@ export function HeroScene() {
     });
     const wire = new THREE.LineSegments(wireGeo, wireMat);
 
-    // Vertex points to give the sphere depth and luminosity
+    // Crisp vertex node points
     const pointsMat = new THREE.PointsMaterial({
       color: BRIGHT_ORANGE,
       size: 0.05,
@@ -45,38 +45,16 @@ export function HeroScene() {
     });
     const points = new THREE.Points(icoGeo, pointsMat);
 
-    // Inner translucent glow sphere
-    const innerGeo = new THREE.SphereGeometry(1.6, 24, 24);
-    const innerMat = new THREE.MeshBasicMaterial({
-      color: ACCENT_ORANGE,
-      transparent: true,
-      opacity: 0.08,
-    });
-    const inner = new THREE.Mesh(innerGeo, innerMat);
-
-    // Center pulsating core
-    const coreGeo = new THREE.SphereGeometry(0.32, 24, 24);
-    const coreMat = new THREE.MeshBasicMaterial({
-      color: BRIGHT_ORANGE,
-      transparent: true,
-      opacity: 0.5,
-    });
-    const core = new THREE.Mesh(coreGeo, coreMat);
-
-    group.add(wire, points, inner, core);
+    group.add(wire, points);
 
     const updateThemeOpacity = () => {
       const isDark = document.documentElement.classList.contains("dark");
       if (isDark) {
-        wireMat.opacity = 0.72;
+        wireMat.opacity = 0.75;
         pointsMat.opacity = 0.95;
-        innerMat.opacity = 0.12;
-        coreMat.opacity = 0.65;
       } else {
-        wireMat.opacity = 0.48;
+        wireMat.opacity = 0.5;
         pointsMat.opacity = 0.75;
-        innerMat.opacity = 0.05;
-        coreMat.opacity = 0.35;
       }
     };
     updateThemeOpacity();
@@ -113,8 +91,6 @@ export function HeroScene() {
       group.rotation.y = t * 0.12 + pointer.x * 0.6;
       group.rotation.x = pointer.y * 0.4;
       group.scale.setScalar(0.6 + 0.4 * intro);
-      core.scale.setScalar(1 + Math.sin(t * 2) * 0.08);
-      inner.scale.setScalar(1 + Math.cos(t * 1.5) * 0.03);
 
       renderer.render(scene, camera);
       frame = requestAnimationFrame(loop);
@@ -130,10 +106,6 @@ export function HeroScene() {
       wireGeo.dispose();
       wireMat.dispose();
       pointsMat.dispose();
-      innerGeo.dispose();
-      innerMat.dispose();
-      coreGeo.dispose();
-      coreMat.dispose();
       renderer.dispose();
       renderer.domElement.remove();
     };
