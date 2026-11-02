@@ -19,22 +19,22 @@ export function ServiceIndex() {
   const [active, setActive] = useState(0);
 
   return (
-    <div className="mx-auto flex w-full max-w-6xl flex-col gap-12">
-      <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+    <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 sm:gap-12">
+      <div className="flex flex-col gap-4 sm:gap-6 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="text-[11px] font-medium uppercase tracking-[0.35em] text-[var(--muted-foreground)]">
             What we build
           </p>
-          <h2 className="mt-5 text-4xl font-medium leading-[1.02] tracking-[-0.05em] md:text-6xl">
+          <h2 className="mt-3 sm:mt-5 text-[clamp(1.75rem,5vw,3.75rem)] font-medium leading-[1.04] tracking-[-0.05em]">
             AI products that actually ship.
           </h2>
         </div>
-        <p className="max-w-xs text-sm leading-6 text-[var(--muted-foreground)]">
-          Hover a service to see how we approach it.
+        <p className="max-w-xs text-xs sm:text-sm leading-5 sm:leading-6 text-[var(--muted-foreground)]">
+          Hover or tap a service to see how we approach it.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-px overflow-hidden rounded-[28px] border border-[var(--border)] bg-[var(--border)] sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl sm:rounded-[28px] border border-[var(--border)] bg-[var(--border)] sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service, i) => {
           const isActive = i === active;
           return (
@@ -44,7 +44,7 @@ export function ServiceIndex() {
               onMouseEnter={() => setActive(i)}
               onFocus={() => setActive(i)}
               onClick={() => setActive(i)}
-              className="group relative flex min-h-[150px] flex-col justify-between overflow-hidden bg-[var(--background)] p-6 text-left transition-colors duration-500 md:min-h-[20vh] md:p-8"
+              className="group relative flex min-h-[130px] sm:min-h-[160px] md:min-h-[20vh] flex-col justify-between overflow-hidden bg-[var(--background)] p-5 sm:p-6 md:p-8 text-left transition-colors duration-500"
             >
               <div
                 className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${
@@ -76,11 +76,11 @@ export function ServiceIndex() {
                 />
               </div>
 
-              <div className="relative">
-                <h3 className="text-xl font-medium leading-tight tracking-[-0.03em] md:text-2xl">{service.name}</h3>
+              <div className="relative mt-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-medium leading-tight tracking-[-0.03em]">{service.name}</h3>
                 <p
-                  className={`overflow-hidden text-sm leading-6 text-[var(--muted-foreground)] transition-all duration-500 ${
-                    isActive ? "mt-3 max-h-24 opacity-100" : "mt-0 max-h-0 opacity-0"
+                  className={`overflow-hidden text-xs sm:text-sm leading-5 sm:leading-6 text-[var(--muted-foreground)] transition-all duration-500 ${
+                    isActive ? "mt-2.5 max-h-24 opacity-100" : "mt-0 max-h-0 opacity-0"
                   }`}
                 >
                   {service.note}

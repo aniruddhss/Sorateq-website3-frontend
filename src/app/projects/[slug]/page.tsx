@@ -33,10 +33,10 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] font-sans antialiased selection:bg-[var(--foreground)] selection:text-[var(--background)]">
-      <main className="max-w-[1400px] mx-auto px-6 sm:px-12 py-24 md:py-32 flex flex-col gap-32">
+      <main className="max-w-[1400px] mx-auto px-4 sm:px-8 md:px-12 py-10 sm:py-16 md:py-24 flex flex-col gap-16 sm:gap-24 md:gap-32">
         
         {/* Navigation */}
-        <nav className="border-b border-[var(--border)] pb-8">
+        <nav className="border-b border-[var(--border)] pb-6 sm:pb-8">
           <Link
             href="/projects"
             className="inline-flex items-center text-sm font-medium hover:opacity-60 transition-opacity"
@@ -47,44 +47,44 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         </nav>
 
         {/* Hero Section */}
-        <section className="flex flex-col md:flex-row gap-16 md:gap-24 items-start">
-          <div className="flex-1 space-y-8">
-            <h1 className="text-5xl sm:text-7xl lg:text-[100px] font-serif leading-[0.9] tracking-tighter">
+        <section className="flex flex-col md:flex-row gap-10 md:gap-24 items-start">
+          <div className="flex-1 space-y-4 sm:space-y-6">
+            <h1 className="text-[clamp(2.5rem,7vw,6.25rem)] font-serif leading-[0.9] tracking-tighter">
               {project.name}
             </h1>
-            <p className="text-2xl sm:text-4xl font-light text-[var(--muted-foreground)] tracking-tight max-w-2xl leading-snug">
+            <p className="text-xl sm:text-3xl md:text-4xl font-light text-[var(--muted-foreground)] tracking-tight max-w-2xl leading-snug">
               {project.tagline}
             </p>
           </div>
           
-          <div className="md:w-[400px] shrink-0 flex flex-col gap-8">
+          <div className="w-full md:w-[400px] shrink-0 flex flex-col gap-6 sm:gap-8">
             {project.publicUrl && (
               <a
                 href={project.publicUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between border border-[var(--border)] p-6 rounded-sm hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-colors"
+                className="group flex items-center justify-between border border-[var(--border)] p-5 sm:p-6 rounded-sm hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-colors"
               >
-                <span className="text-sm font-medium uppercase tracking-widest">View Live Site</span>
-                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <span className="text-xs sm:text-sm font-medium uppercase tracking-widest">View Live Site</span>
+                <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </a>
             )}
             
-            <div className="grid grid-cols-2 gap-x-8 gap-y-12">
+            <div className="grid grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-6 sm:gap-y-12">
               <div>
-                <span className="block text-[10px] font-mono uppercase tracking-widest text-[var(--muted-foreground)] mb-2">Industry</span>
-                <span className="text-sm font-medium">{project.industry}</span>
+                <span className="block text-[10px] font-mono uppercase tracking-widest text-[var(--muted-foreground)] mb-1 sm:mb-2">Industry</span>
+                <span className="text-xs sm:text-sm font-medium">{project.industry}</span>
               </div>
               <div>
-                <span className="block text-[10px] font-mono uppercase tracking-widest text-[var(--muted-foreground)] mb-2">Stage</span>
-                <span className="text-sm font-medium">{project.stage}</span>
+                <span className="block text-[10px] font-mono uppercase tracking-widest text-[var(--muted-foreground)] mb-1 sm:mb-2">Stage</span>
+                <span className="text-xs sm:text-sm font-medium">{project.stage}</span>
               </div>
             </div>
           </div>
         </section>
 
         {/* Main Overview Image / Video Placeholder */}
-        <section className="w-full aspect-[21/9] bg-[var(--muted)] border border-[var(--border)] rounded-sm flex items-center justify-center relative overflow-hidden">
+        <section className="w-full aspect-[16/10] sm:aspect-[21/9] bg-[var(--muted)] border border-[var(--border)] rounded-sm flex items-center justify-center relative overflow-hidden">
           {project.heroImage ? (
             <img
               src={encodeURI(project.heroImage)}
@@ -92,7 +92,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               className="w-full h-full object-cover object-top"
             />
           ) : (
-            <span className="font-mono text-sm tracking-widest text-[var(--muted-foreground)] uppercase">Hero Media / Video Walkthrough</span>
+            <span className="font-mono text-xs sm:text-sm tracking-widest text-[var(--muted-foreground)] uppercase text-center p-4">Hero Media / Video Walkthrough</span>
           )}
         </section>
 
@@ -142,10 +142,10 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         </section>
 
         {/* System Architecture */}
-        <section className="border-y border-[var(--border)] py-24 flex flex-col gap-24">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-24">
+        <section className="border-y border-[var(--border)] py-12 sm:py-20 md:py-24 flex flex-col gap-12 sm:gap-16 md:gap-24">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-24">
             <div className="md:col-span-4">
-              <h3 className="text-3xl font-serif tracking-tight">System Architecture<br/>& Solution</h3>
+              <h3 className="text-2xl sm:text-3xl font-serif tracking-tight">System Architecture<br className="hidden md:inline" />& Solution</h3>
             </div>
             <div className="md:col-span-8">
               <MarkdownContent content={project.solution} />

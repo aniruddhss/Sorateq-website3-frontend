@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { validateEmail } from "@/lib/email-validator";
-import { ArrowRight, Loader2, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Loader2, CheckCircle2 } from "lucide-react";
 
 interface EmailGateProps {
   onSuccess: (visitor: { id: string; email: string }, conversationId: string) => void;

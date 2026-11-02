@@ -59,20 +59,20 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] font-sans antialiased selection:bg-[var(--foreground)] selection:text-[var(--background)]">
-      <main className="max-w-[1400px] mx-auto px-6 sm:px-12 py-24 md:py-32 flex flex-col gap-24">
+      <main className="max-w-[1400px] mx-auto px-4 sm:px-8 md:px-12 py-12 sm:py-20 md:py-28 flex flex-col gap-12 sm:gap-16 md:gap-24">
         
         {/* Header */}
-        <section className="space-y-8 max-w-4xl">
-          <h1 className="text-6xl md:text-8xl lg:text-[100px] font-serif tracking-tighter leading-[0.9]">
+        <section className="space-y-4 sm:space-y-6 max-w-4xl">
+          <h1 className="text-[clamp(2.75rem,7vw,6.25rem)] font-serif tracking-tighter leading-[0.9]">
             Index of Work
           </h1>
-          <p className="text-xl md:text-3xl font-light text-[var(--muted-foreground)] leading-snug">
+          <p className="text-lg sm:text-xl md:text-3xl font-light text-[var(--muted-foreground)] leading-snug">
             A curated selection of software architecture, engineering platforms, and robust SaaS solutions.
           </p>
         </section>
 
         {/* Filters & Search */}
-        <section className="flex flex-col xl:flex-row gap-8 xl:items-end justify-between border-b border-[var(--border)] pb-8">
+        <section className="flex flex-col xl:flex-row gap-6 sm:gap-8 xl:items-end justify-between border-b border-[var(--border)] pb-6 sm:pb-8">
           <div className="flex flex-wrap gap-x-6 gap-y-4 max-w-3xl">
             {CATEGORIES.map((cat) => (
               <button

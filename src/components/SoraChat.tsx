@@ -277,9 +277,9 @@ export function SoraChat({ conversationId, visitorEmail = "", initialMessages = 
   };
 
   return (
-    <div className={`flex flex-col h-full w-full max-w-3xl mx-auto px-4 sm:px-6 transition-all duration-500 ease-in-out ${messages.length === 0 ? 'justify-center' : 'justify-end'}`}>
+    <div className={`flex flex-col h-full w-full max-w-3xl mx-auto px-2 sm:px-4 md:px-6 transition-all duration-500 ease-in-out ${messages.length === 0 ? 'justify-center' : 'justify-end'}`}>
       {/* Messages Scroll Area */}
-      <div className={`flex-1 overflow-y-auto py-6 space-y-6 flex flex-col ${messages.length === 0 ? 'hidden' : 'flex'}`}>
+      <div className={`flex-1 overflow-y-auto py-4 sm:py-6 space-y-4 sm:space-y-6 flex flex-col ${messages.length === 0 ? 'hidden' : 'flex'}`}>
         {messages.map((msg) => {
           const isAssistant = msg.sender === "assistant";
           return (
@@ -454,8 +454,8 @@ export function SoraChat({ conversationId, visitorEmail = "", initialMessages = 
       <div className={`w-full max-w-3xl mx-auto flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${messages.length === 0 ? 'pb-[10vh]' : 'pb-6'}`}>
         
         {messages.length === 0 && (
-          <div className="text-center mb-10 animate-fade-in flex flex-col items-center">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--accent-orange)]/40 bg-[var(--card)] p-2 shadow-sm shadow-[0_0_24px_rgba(255,90,31,0.15)] transition-transform duration-300 hover:scale-105 hover:border-[var(--accent-orange)]">
+          <div className="text-center mb-6 sm:mb-10 animate-fade-in flex flex-col items-center px-2">
+            <div className="mb-4 sm:mb-6 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl border border-[var(--accent-orange)]/40 bg-[var(--card)] p-2 shadow-sm shadow-[0_0_24px_rgba(255,90,31,0.15)] transition-transform duration-300 hover:scale-105 hover:border-[var(--accent-orange)]">
               <Image
                 src="/sorateq-logo-medium.png"
                 alt="Sorateq AI Assistant"
@@ -465,10 +465,10 @@ export function SoraChat({ conversationId, visitorEmail = "", initialMessages = 
                 priority
               />
             </div>
-            <h1 className="text-3xl sm:text-5xl font-serif text-[var(--foreground)] tracking-tight mb-3">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-serif text-[var(--foreground)] tracking-tight mb-2 sm:mb-3">
               What services are you looking for?
             </h1>
-            <p className="text-[var(--muted-foreground)] text-sm font-light">
+            <p className="text-[var(--muted-foreground)] text-xs sm:text-sm font-light">
               Describe your idea, architecture, or project.
             </p>
           </div>

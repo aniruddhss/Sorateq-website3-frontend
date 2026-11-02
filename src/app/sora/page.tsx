@@ -34,8 +34,8 @@ export default function SoraPage() {
   }, [checkSession]);
 
   return (
-    <main className="relative flex h-screen w-full flex-col overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
-      <div className="relative z-10 flex h-full w-full flex-col items-center justify-center p-6">
+    <main className="relative flex min-h-[calc(100dvh-4rem)] md:min-h-screen w-full flex-col overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
+      <div className="relative z-10 flex h-full w-full flex-col items-center justify-center p-2 sm:p-4 md:p-6">
         {sessionChecked && (
           <SoraChat
             key={visitor?.email || "guest"}

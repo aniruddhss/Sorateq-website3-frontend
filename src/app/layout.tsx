@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
+import { InitialLoader } from "@/components/InitialLoader";
 import { themeInitScript } from "@/lib/theme";
 
 const geistSans = Geist({
@@ -70,9 +71,10 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className="min-h-screen flex flex-row bg-[var(--background)] text-[var(--foreground)] selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+      <body className="min-h-screen flex flex-col md:flex-row bg-[var(--background)] text-[var(--foreground)] selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+        <InitialLoader />
         <Navigation />
-        <main className="flex-1 flex flex-col min-w-0 pl-16">{children}</main>
+        <main className="flex-1 flex flex-col min-w-0 pt-16 md:pt-0 pl-0 md:pl-16">{children}</main>
       </body>
     </html>
   );

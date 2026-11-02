@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowLeft, Plus, Save, Database, Sparkles, Search } from "lucide-react";
+import { ArrowLeft, Plus, Save, Database, Search } from "lucide-react";
 
 export default function AdminKnowledgePage() {
   const [docs, setDocs] = useState<any[]>([]);

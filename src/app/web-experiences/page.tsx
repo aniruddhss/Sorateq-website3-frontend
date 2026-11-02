@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Sparkles, ArrowRight, Eye, Layout, Monitor, Smartphone, Palette, Zap } from "lucide-react";
+import { ArrowRight, Eye, Layout, Monitor, Smartphone, Palette, Zap } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -95,7 +95,7 @@ export default function WebExperiencesPage() {
       <div className="rounded-2xl border border-white/15 bg-zinc-900/80 p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="space-y-2 max-w-xl">
           <div className="flex items-center space-x-2 text-emerald-400 text-xs font-mono">
-            <Sparkles className="w-3.5 h-3.5" />
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
             <span>DESIGN CONSULTATION</span>
           </div>
           <h3 className="text-xl sm:text-2xl font-semibold text-white">

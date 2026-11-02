@@ -117,8 +117,8 @@ export function MeetingSchedulerModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 sm:p-6 animate-fade-in">
-      <div className="relative w-full max-w-xl bg-zinc-950 border border-white/15 rounded-2xl p-6 sm:p-8 flex flex-col shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-3 sm:p-6 animate-fade-in">
+      <div className="relative w-full max-w-xl max-h-[92vh] overflow-y-auto bg-zinc-950 border border-white/15 rounded-2xl p-5 sm:p-8 flex flex-col shadow-2xl">
         {/* Header */}
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
           <div className="flex items-center space-x-2.5">

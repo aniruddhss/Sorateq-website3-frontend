@@ -3,7 +3,7 @@
 import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowLeft, MessageSquare, Clock, User, Sparkles, FileText, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, MessageSquare, Clock, User, FileText, CheckCircle2 } from "lucide-react";
 
 function ConversationInspectorContent() {
   const [conversations, setConversations] = useState<any[]>([]);

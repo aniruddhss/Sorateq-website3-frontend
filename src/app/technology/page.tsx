@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Sparkles, ArrowRight, Code, Database, Cpu, Cloud, Smartphone, Lock } from "lucide-react";
+import { ArrowRight, Code, Database, Cpu, Cloud, Smartphone, Lock, Terminal } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -38,7 +38,7 @@ const TECH_CATEGORIES = [
     title: "AI Model Ecosystem",
     description: "OpenAI GPT-4o, Anthropic Claude 3.5 Sonnet, Google Gemini 2.0, DeepSeek, Groq, Ollama.",
     why: "Multi-provider model routing, fallback matrices, latency optimization, and automated evaluation suites.",
-    icon: Sparkles,
+    icon: Terminal,
   },
   {
     title: "Security & Compliance",
@@ -50,30 +50,30 @@ const TECH_CATEGORIES = [
 
 export default function TechnologyPage() {
   return (
-    <div className="flex-1 py-16 px-6 sm:px-12 md:px-16 max-w-6xl mx-auto space-y-20">
+    <div className="flex-1 py-10 sm:py-16 px-4 sm:px-8 md:px-16 max-w-6xl mx-auto space-y-12 sm:space-y-16 md:space-y-20">
       {/* Hero */}
       <div className="space-y-4 max-w-3xl">
         <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.02] text-xs font-mono text-zinc-400">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
           <span>PRODUCTION STACK & ARCHITECTURE</span>
         </div>
-        <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-white uppercase leading-[1.08]">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white uppercase leading-[1.08]">
           Engineered for <br />
           <span className="text-zinc-400">speed, clarity and scale.</span>
         </h1>
-        <p className="text-base sm:text-lg text-zinc-300 font-light leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg text-zinc-300 font-light leading-relaxed">
           We don&apos;t use hype-driven technologies. We choose proven, battle-tested modern foundations that let small teams ship at breakneck speed.
         </p>
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         {TECH_CATEGORIES.map((item, idx) => {
           const Icon = item.icon;
           return (
             <div
               key={idx}
-              className="rounded-2xl border border-white/10 bg-zinc-900/40 p-8 space-y-4 hover:border-white/20 transition-all flex flex-col justify-between"
+              className="rounded-2xl border border-white/10 bg-zinc-900/40 p-5 sm:p-7 md:p-8 space-y-4 hover:border-white/20 transition-all flex flex-col justify-between"
             >
               <div className="space-y-3">
                 <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white">
@@ -93,10 +93,10 @@ export default function TechnologyPage() {
       </div>
 
       {/* Banner */}
-      <div className="rounded-2xl border border-white/15 bg-zinc-900/80 p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="rounded-2xl border border-white/15 bg-zinc-900/80 p-6 sm:p-10 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="space-y-2 max-w-xl">
           <div className="flex items-center space-x-2 text-emerald-400 text-xs font-mono">
-            <Sparkles className="w-3.5 h-3.5" />
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
             <span>ARCHITECTURAL AUDIT</span>
           </div>
           <h3 className="text-xl sm:text-2xl font-semibold text-white">
@@ -108,7 +108,7 @@ export default function TechnologyPage() {
         </div>
         <Link
           href="/sora"
-          className="px-6 py-3.5 rounded-xl bg-white text-zinc-950 font-medium text-xs hover:bg-zinc-200 transition-all flex items-center space-x-2 shrink-0 shadow-lg"
+          className="w-full sm:w-auto min-h-[44px] justify-center px-6 py-3.5 rounded-xl bg-white text-zinc-950 font-medium text-xs hover:bg-zinc-200 transition-all flex items-center space-x-2 shrink-0 shadow-lg"
         >
           <span>Ask Sora</span>
           <ArrowRight className="w-4 h-4" />

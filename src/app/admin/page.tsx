@@ -6,7 +6,6 @@ import Image from "next/image";
 import {
   Users,
   MessageSquare,
-  Sparkles,
   Calendar,
   Layers,
   FileText,
@@ -166,7 +165,7 @@ export default function AdminDashboardPage() {
   };
 
   return (
-    <div className="flex-1 py-10 px-6 sm:px-10 max-w-7xl mx-auto space-y-10 w-full">
+    <div className="flex-1 py-8 sm:py-10 px-4 sm:px-8 md:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 w-full overflow-hidden">
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
         <div>
